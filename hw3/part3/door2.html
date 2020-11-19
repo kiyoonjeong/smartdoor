@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Enter the faceId</p>
+
+    faceId: <input type="text" id="faceId"><br>
+    <br>
+<p>Enter the name</p>
+
+    name: <input type="text" id="name"><br>
+    <br>
+<p>Enter the phone</p>
+
+    phone: <input type="text" id="phone"><br>
+    <br>
+<p>Enter the filename</p>
+
+    filename: <input type="text" id="filename"><br>
+    <br>
+  <input type="button" onclick="submit()" value="Submit">
+
+
+<script>
+function submit() {
+
+    var faceId = document.getElementById("faceId").value;
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var filename = document.getElementById("filename").value;
+
+    const url = "https://nbrb8crzyb.execute-api.us-west-2.amazonaws.com/v1";
+    fetch(url, {
+        method : "POST",
+        body : JSON.stringify({
+            faceId : document.getElementById('faceId').value,
+            name : document.getElementById("name").value,
+            phone : document.getElementById("phone").value,
+            filename : document.getElementById("filename").value
+        })
+    }).then(
+        response => response.text() // .json(), etc.
+        // same as function(response) {return response.text();}
+    ).then(
+        html => console.log(html)
+    );
+    
+}
+
+</script>
+
+</body>
+</html>

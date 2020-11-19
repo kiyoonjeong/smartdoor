@@ -1,0 +1,30 @@
+[
+    {
+        "faceId": "777",
+        "name": "Test1",
+        "phoneNumber": "+12345678901",
+        "photos": [
+            {
+                "objectKey": "my-photo.jpg",
+                "bucket": "cs9223-as2-s3-b1",
+                "createdTimestamp":
+            "2018-11-05T12:40:02"
+            }
+        ]
+    },
+    {
+        "faceId": "888",
+        "name": "Test2",
+        "phoneNumber": "+12345678901",
+        "photos": [
+            {
+                "objectKey": "my-photo.jpg",
+                "bucket": "cs9223-as2-s3-b1",
+                "createdTimestamp":
+            "2018-11-05T12:40:02"
+            }
+        ]
+    }
+]
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Enter the OTP that you received through text</p>
+
+
+    OTP: <input type="text" id="otp"><br>
+    <br>
+  <input type="button" onclick="submit()" value="Submit">
+
+
+<script>
+function submit() {
+    
+    var http = new XMLHttpRequest();
+    var url = 'https://llfsqbxufj.execute-api.us-west-2.amazonaws.com/v1';
+    var otp = document.getElementById("otp").value;
+    var params = 'otp='+otp;
+    http.open('POST', url, true);
+    
+    //Send the proper header information along with the request
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState == 4 && http.status == 200) {
+            var response = String(http.responseText);
+            //console.log(response);
+            if(response === "\"passed\"") {
+                var btn = document.createElement("P"); // Success
+                btn.innerText = "Welcome!";               
+                document.body.appendChild(btn); 
+            } else {
+                var btn = document.createElement("P"); // Failure
+                btn.innerText = "Access Denied!";               
+                document.body.appendChild(btn); 
+            }
+        }
+    }
+    console.log(params);
+    http.send(params);
+}
+
+</script>
+
+</body>
+</html>
