@@ -2,7 +2,7 @@
 
 Build a distributed system that authenticate people using Kinesis Video Streams and Amazon Rekognition, and provide them access to a virtual door.
 
-# Workflow
+### Workflow
 
 1. Process streaming video and perform stream analysis to identify faces.
 2. Check if visitor's face is matched with the face data in the database.
@@ -10,4 +10,6 @@ Build a distributed system that authenticate people using Kinesis Video Streams 
 4. If not, send a visitor's face image and description to system manager.
 5. If system manager allows him/her to enter, the system store the visitor's face data into the database and send them a OTP.
 
-# Architecture
+### Architecture Image
+
+![Screenshot](Architecture.png)
